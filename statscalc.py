@@ -38,7 +38,7 @@ park_factors = {
     "Truist Park (Atlanta Braves)": 101,
     "Wrigley Field (Chicago Cubs)": 97,
     "Yankee Stadium (New York Yankees)": 100
-}
+} 
 
 # Tab 1: Basic Stats Calculator
 with tab1:
@@ -84,20 +84,26 @@ with tab1:
 
 # Tab 2: wRC+ Calculator
 with tab2:
-    st.header("wRC+ Calculator")
+    st.header("wRC+ Calculator") 
     
-    # Get park selection
-    park = st.selectbox("Select Ballpark", list(park_factors.keys()))
+    # Only two inputs needed
+    col1, col2 = st.columns(2)
+    with col1:
+        player_woba = st.number_input("Player's wOBA", min_value=0.0, max_value=1.0, value=0.350, step=0.001, format="%.3f")
+    with col2:
+        park = st.selectbox("Home Ballpark", options=list(park_factors.keys()))
+    
     park_factor = park_factors[park]
     
-    # Display park factor
-    st.markdown(f"**{park} Park Factor:** {park_factor}")
+    if st.button("Calculate wRC+"):
+        
+        # wRC+ formula
+        wrc_plus = (((((player_woba - 0.310) / 1.242) + 0.11698) + (0.11698 - ((park_factor / 100) * 0.11698))) / (0.117)) * 100
+        
+        # Display results
+        st.metric("wRC+", value=f"{wrc_plus:.0f}")
+        st.caption(f"Park Factor: {park_factor} (Higher favors hitters)")
     
-    # Placeholder for wRC+ calculation
-    wrc_plus = 100  # This would be calculated based on inputs and park factor
-    
-    st.markdown(f"**Weighted Runs Created Plus (wRC+):** {wrc_plus}")
-
 # Tab 3: Glossary
 with tab3:
     st.header("Baseball Statistics Glossary")
