@@ -70,7 +70,7 @@ with tab1:
         obp = (singles + doubles + triples + hr + ubb + ibb + hbp) / (ab + ubb + ibb + hbp + sf) if (ab + ubb + ibb + hbp + sf) > 0 else 0
         slg = (singles + doubles*2 + triples*3 + hr*4) / ab if ab > 0 else 0
         ops = obp + slg
-        woba = 0  # Placeholder - you'll add the actual formula later
+        woba = ((.69 * ubb) + (.72 * hbp) + (.88 * singles) + (1.25 * doubles) + (1.59 * triples) + (2.05 * hr))/(ab + ubb + sf + hbp)
         
         # Display results
         st.subheader("Results")
