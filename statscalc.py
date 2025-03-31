@@ -102,7 +102,7 @@ with tab2:
         
         # Display results
         st.metric("wRC+", value=f"{wrc_plus:.0f}")
-        st.caption(f"Park Factor: {park_factor} (Higher favors hitters)")
+        st.caption(f"Park Factor: {park_factor} (Higher park factor means that park favors hitters, and vice versa for a lower number. 100 is average. For example, if a player has a 110 park factor, their wRC+ will not be as high as someone with the same stats playing in a 100 park factor stadium.)")
     
 # Tab 3: Glossary
 with tab3:
@@ -110,36 +110,36 @@ with tab3:
     
     stats_info = {
         "Walk% (BB%)": {
-            "description": "PLACEHOLDER - Percentage of plate appearances resulting in walks",
-            "url": "https://www.fangraphs.com/library/offense/bb-rate/"
+            "description": "Percentage of plate appearances resulting in walks",
+            "url": "https://library.fangraphs.com/offense/rate-stats/"
         },
         "Strikeout% (K%)": {
-            "description": "PLACEHOLDER - Percentage of plate appearances resulting in strikeouts",
-            "url": "https://www.fangraphs.com/library/offense/k-rate/"
+            "description": "Percentage of plate appearances resulting in strikeouts",
+            "url": "https://library.fangraphs.com/offense/rate-stats/"
         },
         "Batting Average (AVG)": {
-            "description": "PLACEHOLDER - Hits divided by at-bats",
-            "url": "https://www.fangraphs.com/library/offense/ba/"
+            "description": "Hits divided by at-bats",
+            "url": "https://library.fangraphs.com/offense/offensive-statistics-list/"
         },
         "On-base Percentage (OBP)": {
-            "description": "PLACEHOLDER - How often a batter reaches base",
-            "url": "https://www.fangraphs.com/library/offense/obp/"
+            "description": "How often a batter reaches base",
+            "url": "https://library.fangraphs.com/offense/offensive-statistics-list/"
         },
         "Slugging Percentage (SLG)": {
-            "description": "PLACEHOLDER - Total bases divided by at-bats",
-            "url": "https://www.fangraphs.com/library/offense/slg/"
+            "description": "Total bases divided by at-bats",
+            "url": "https://library.fangraphs.com/offense/offensive-statistics-list/"
         },
         "On-base Plus Slugging (OPS)": {
-            "description": "PLACEHOLDER - OBP plus SLG",
+            "description": "OBP plus SLG",
             "url": "https://www.fangraphs.com/library/offense/ops/"
         },
         "Weighted On-base Average (wOBA)": {
-            "description": "PLACEHOLDER - Advanced offensive metric that weights outcomes",
-            "url": "https://www.fangraphs.com/library/offense/woba/"
+            "description": "Advanced offensive metric that properly weights outcomes",
+            "url": "https://library.fangraphs.com/offense/woba/"
         },
         "Weighted Runs Created Plus (wRC+)": {
-            "description": "PLACEHOLDER - Park-adjusted offensive value metric",
-            "url": "https://www.fangraphs.com/library/offense/wrc/"
+            "description": "Takes wOBA and adjusts it based on league and park factors, where 100 is average",
+            "url": "https://library.fangraphs.com/offense/wrc/"
         }
     }
     
