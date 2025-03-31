@@ -1,1 +1,1 @@
-# Midterm
+This project is a baseball stats calculator. The user is prompted to input a number of basic counting stats, and the website will output advanced stats like wOBA and wRC+. There is also a glossary with links to Fangraphs for further descriptions of specific stats.
